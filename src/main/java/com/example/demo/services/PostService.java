@@ -7,11 +7,14 @@ import java.util.List;
 
 @Service
 public class PostService {
+
+    private List<Post> posts = new ArrayList<>();
+
     public List<Post> ListAllPosts() {
-        List<Post> list = new ArrayList<>();
-        list.add(new Post("Нас 25000", new Date()));
-        list.add(new Post("И мы идём",new Date()));
-        list.add(new Post("Сдавать джаву", new Date()));
-        return list;
+        return posts;
+    }
+
+    public void create(String text) {
+        posts.add(new Post(text, new Date()));
     }
 }
